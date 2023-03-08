@@ -7,9 +7,7 @@ Here's how you can install an extension in development mode:
 - [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing)
 - [Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked)
 
-Currently the only feature available for testing is the Mastodon instance switcher.
-
-## Available tools
+## Features
 
 ### Mastodon instance switcher
 
@@ -21,3 +19,16 @@ Clicking the extension icon lets you open a currently viewed post on another ins
 Each instance domain (omit the http or https protocol) goes on a separate line.
 
 ![Screenshot of the settings page with a text field for adding your Mastodon instances.](browser-extension/assets/screenshot-settings.png)
+
+
+### Tag browser
+
+When viewing a tag page on Mastodon, a link will be added to the plugin pop-up window that lets you browse the current tag across a larger portion of the fediverse using the [Fediverse Explorer](https://fediverse-explorer.stefanbohacek.dev/), another tool I've developed.
+
+![Screenshot of the settings page with a text field for adding your Mastodon instances.](browser-extension/assets/tag-browser.png)
+
+### Profile hovercards
+
+This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under "Exploring" as "On-hover information cards for users", but you don't have to wait!
+
+![A screenshot of two posts with the hovercard visible as an overlay.](browser-extension/assets/hovercard.png)

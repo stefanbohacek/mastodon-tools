@@ -26,19 +26,16 @@ const handleLinks = () => {
 
 const addFediverseExplorerLink = async (currentURL) => {
   const tagBrowserLink = document.getElementById('tag-browser-link');
-  const tag = currentURL.split('/tags/');
-
-  console.log({
-    currentURL,
-    tag
-  });
+  let tag = currentURL.split('/tags/');
 
   if (tag && tag.length > 1){
+    tag = tag[1].toLowerCase();
+
     const a = document.createElement('a');
-    const link = document.createTextNode(`Explore the #${tag[1]} tag`);
+    const link = document.createTextNode(`Explore the #${tag} tag`);
     a.classList.add('fw-bold');
     a.appendChild(link); 
-    a.href = `https://fediverse-explorer.stefanbohacek.dev/?tag=${tag[1]}`; 
+    a.href = `https://fediverse-explorer.stefanbohacek.dev/?tag=${tag}`; 
     tagBrowserLink.appendChild(a);
     tagBrowserLink.classList.remove('d-none');
   }
