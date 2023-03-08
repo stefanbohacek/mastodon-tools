@@ -32,3 +32,8 @@ When viewing a tag page on Mastodon, a link will be added to the plugin pop-up w
 This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under "Exploring" as "On-hover information cards for users", but you don't have to wait!
 
 ![A screenshot of two posts with the hovercard visible as an overlay.](browser-extension/assets/hovercard.png)
+
+
+## Known issues
+
+- Hovercard doesn't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
