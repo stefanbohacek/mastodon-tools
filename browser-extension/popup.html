@@ -2,12 +2,15 @@
 <html>
 <head>
 	<link rel="stylesheet" href="styles/popup.css" />
-	<link rel="stylesheet" href="styles/fonts-popup.css" />
 </head>
 <body style="min-width:300px;">
-	<h1>Instance switcher <sup>beta</sup></h1>
-	<ul id="mastodon-instances" class="no-bullets"></ul>
-	<button id="go-to-options">Manage instances</button>
+	<strong class="lead"><a href="https://github.com/stefanbohacek/mastodon-tools">Mastodon Tools</a> | <a href="#" id="go-to-options">Options</a></strong>
+	<p class="section-title">
+		<strong>Switch instance</strong>
+	</p>
+
+	<ul id="mastodon-instances" class="pl-2 fw-bold"></ul>
+	<div id="tag-browser-link" class="d-none mt-1 pt-1"></div>
 	<script src="scripts/popup.js"></script>
 </body>
 </html>
