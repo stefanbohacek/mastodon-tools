@@ -4,8 +4,8 @@
     overflow: hidden;
     background-color: #fff;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0;
+    left: 0;
     z-index: 999999;
 }
 
