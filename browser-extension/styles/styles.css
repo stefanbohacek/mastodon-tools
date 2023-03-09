@@ -14,6 +14,11 @@
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+.detailed-status__display-name{
+    position: relative;
+    overflow: visible !important;
+}
+
 .account__display-name:hover .sbmt-hovercard,
 .detailed-status__display-name:hover .sbmt-hovercard,
 .notification__display-name:hover .sbmt-hovercard,
