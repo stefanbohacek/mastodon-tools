@@ -29,7 +29,7 @@ class Hovercard {
                 // results.locked
                 // results.url
            
-                const followersHTML = Number.isInteger(results.followers_count) ? `<span class="sbmt-followers-following">${results.followers_count.toLocaleString()} followers | ${results.following_count.toLocaleString()} following<span>` : '';
+                const followersHTML = Number.isInteger(results.followers_count) ? `<span class="sbmt-followers-following">${results.following_count.toLocaleString()} following | ${results.followers_count.toLocaleString()} followers<span>` : '';
     
                 let labelsHTML = '';
     
