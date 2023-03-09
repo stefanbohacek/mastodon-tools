@@ -20,6 +20,7 @@
     overflow: visible !important;
 }
 
+.mention.status-link:hover .sbmt-hovercard,
 .account__display-name:hover .sbmt-hovercard,
 .detailed-status__display-name:hover .sbmt-hovercard,
 .notification__display-name:hover .sbmt-hovercard,
