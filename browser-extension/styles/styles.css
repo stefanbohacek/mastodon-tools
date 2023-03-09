@@ -15,7 +15,9 @@
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+.account__display-name:hover .sbmt-hovercard,
 .detailed-status__display-name:hover .sbmt-hovercard,
+.notification__display-name:hover .sbmt-hovercard,
 .status__display-name:hover .sbmt-hovercard{
     display: flex;
 }
