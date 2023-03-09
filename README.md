@@ -40,4 +40,5 @@ This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under
 
 ## TODO
 
+- show hovercards for accounts mentioned in profile descriptions
 - show hovercards for accounts mentioned in posts
