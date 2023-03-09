@@ -1,5 +1,6 @@
 .sbmt-hovercard.sbmt-account-info{
     color: #606984 !important;
+    min-width: 300px;
     max-width: 420px;
     border-radius: 8px;
     overflow: hidden;
