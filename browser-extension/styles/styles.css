@@ -4,14 +4,14 @@
     overflow: hidden;
     background-color: #fff;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 4px;
+    left: 4px;
     z-index: 999999;
 }
 
 .sbmt-hovercard{
     display: none;
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .detailed-status__display-name{
