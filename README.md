@@ -37,3 +37,7 @@ This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under
 ## Known issues
 
 - Hovercard doesn't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
+
+## TODO
+
+- show hovercards for accounts mentioned in posts
