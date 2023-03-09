@@ -7,11 +7,10 @@
     top: 1rem;
     left: 1rem;
     z-index: 999999;
-    /* pointer-events: none; */
 }
 
 .sbmt-hovercard{
-    display: none;
+    /* display: none; */
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -49,6 +48,10 @@
 .sbmt-account-note{
     margin-top: 4px;
     font-weight: normal;
+}
+
+.sbmt-account-note p *{
+    display: inline !important;
 }
 
 .sbmt-row{
