@@ -36,9 +36,9 @@ This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under
 
 ## Known issues
 
-- Hovercard doesn't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
+- Hovercards doen't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
+- Hovercards don't work for accounts on some non-Mastodon servers.
 - Hovercards for accounts mentioned in profile bio are not positioned correctly.
 ## TODO
 
-- ~~show hovercards for accounts mentioned in profile descriptions~~
-- ~~show hovercards for accounts mentioned in posts~~
+- When data is not available, show profile picture from the post and a note explaining the lack of data.
