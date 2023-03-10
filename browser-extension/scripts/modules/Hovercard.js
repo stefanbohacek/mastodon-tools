@@ -61,13 +61,13 @@ class Hovercard {
                 card.innerHTML = `
                 <div class="sbmt-row">
                     <div class="sbmt-profile-img-wrapper sbmt-column">
-                        <a href="${results.url}" class="sbmt-profile-img-link">
+                        <a href="/${results.account}" class="sbmt-profile-img-link">
                             <img width="60" heigh="60" class="sbmt-profile-img" src="${results.avatar_static}" />
                         </a>
                     </div>
                     <div class="sbmt-account-details sbmt-column">
                         ${labelsHTML}
-                        <a href="${results.url}" class="sbmt-account-name-link">
+                        <a href="/${results.account}" class="sbmt-account-name-link">
                             <span class="sbmt-account-name">${results.display_name || results.username}</span>
                         </a>
                         <span class="sbmt-account-username">${results.account}</span>
