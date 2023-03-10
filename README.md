@@ -41,4 +41,4 @@ This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under
 - Hovercards for accounts mentioned in profile bio are not positioned correctly.
 ## TODO
 
-- When data is not available, show profile picture from the post and a note explaining the lack of data.
+- ~~When data is not available, show profile picture from the post and a note explaining the lack of data.~~
