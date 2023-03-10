@@ -1,7 +1,10 @@
 const saveOptions = () => {
   let mastodonInstances = document.getElementById('mastodon-instances').value;
+  let showHovercards = document.getElementById('show-hovercards').checked;
+
   chrome.storage.sync.set({
-    mastodonInstances: mastodonInstances
+    mastodonInstances,
+    showHovercards
   }, function() {
     let status = document.getElementById('status');
     status.textContent = 'Options saved.';
@@ -13,10 +16,14 @@ const saveOptions = () => {
 
 const restoreOptions = () => {
   chrome.storage.sync.get({
-    mastodonInstances: 'mastodon.social\nbotsin.space'
+    mastodonInstances: 'mastodon.social\nbotsin.space',
+    showHovercards: true
   }, function(items) {
     if (items.mastodonInstances){
       document.getElementById('mastodon-instances').value = items.mastodonInstances;
+    }
+    if (items.showHovercards){
+      document.getElementById('show-hovercards').checked = true;
     }
   });
 }

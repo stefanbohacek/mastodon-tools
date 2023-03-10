@@ -6,12 +6,17 @@
     <p>
       <strong>Mastodon instances</strong>
     </p>
-    <textarea id="mastodon-instances" rows="8" cols="50"></textarea>
+    <textarea name="mastodon-instances" id="mastodon-instances" rows="8" cols="50"></textarea>
   </label>
   <p>
-    <button id="save">Save</button>
+    <label>Show profile cards on hover
+      <input type="checkbox" name="show-hovercards" id="show-hovercards">
+    </label>
   </p>
-  <div id="status"></div>
+  <p>
+    <button id="save">Save</button>
+    <span id="status"></span>
+  </p>
   <script src="scripts/options.js"></script>
 </body>
 </html>
