@@ -31,6 +31,10 @@
     text-decoration: none;
 }
 
+.status__content.status__content--with-action{
+    overflow: visible !important;
+}
+
 .status__content{
     /* overflow: visible !important; */
 }
