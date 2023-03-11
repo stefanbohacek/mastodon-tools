@@ -27,12 +27,13 @@ When viewing a tag page on Mastodon, a link will be added to the plugin pop-up w
 
 ![Screenshot of the settings page with a text field for adding your Mastodon instances.](browser-extension/assets/tag-browser.png)
 
-### Profile hovercards
+### Profile hovercards (Experimental)
 
 This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under "Exploring" as "On-hover information cards for users", but you don't have to wait! On by default, but can be easily disabled in the extension's settings.
 
 ![A screenshot of two posts with the hovercard visible as an overlay.](browser-extension/assets/hovercard.png)
 
+Note that this feature is under active development and you will need to enable it in the settings.
 
 ## Known issues
 
