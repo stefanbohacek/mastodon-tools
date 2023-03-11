@@ -34,7 +34,9 @@ const loadAccountInfo = async (account) => {
         isFetchingData = true;
         const resp = await fetch(apiURL);
         const respJSON = await resp.json();
-  
+ 
+        console.log(respJSON);
+
         if (respJSON && (respJSON.display_name || respJSON.username)){
           results = {
             account,
@@ -50,6 +52,10 @@ const loadAccountInfo = async (account) => {
             locked: respJSON.locked,
             url: respJSON.url
           };
+
+          if (respJSON.roles){
+            results.roles = respJSON.roles.map(role => role.name.toLowerCase());
+          }
     
           savedAccounts.push(results);
   

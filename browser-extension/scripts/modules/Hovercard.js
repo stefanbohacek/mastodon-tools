@@ -44,15 +44,21 @@ class Hovercard {
     
                 let labelsHTML = '';
     
-                if (results.bot || results.locked){
+                if (results.roles || results.bot || results.locked){
                     labelsHTML = '<span class="sbmt-account-labels">';
                     
+                    if (results.roles){
+                        if (results.roles.includes('owner')){
+                            labelsHTML += '<span title="Instance owner">👑</span>';
+                        }
+                    }
+                    
                     if (results.bot){
-                        labelsHTML += '🤖';
+                        labelsHTML += '<span title="Automated account">🤖</span>';
                     }
     
                     if (results.locked){
-                        labelsHTML += '🔒';
+                        labelsHTML += '<span title="Locked account">🔒</span>';
                     }
     
                     labelsHTML += '</span>';
