@@ -17,7 +17,7 @@ const saveOptions = () => {
 const restoreOptions = () => {
   chrome.storage.sync.get({
     mastodonInstances: 'mastodon.social\nbotsin.space',
-    showHovercards: true
+    showHovercards: false
   }, function(items) {
     if (items.mastodonInstances){
       document.getElementById('mastodon-instances').value = items.mastodonInstances;
