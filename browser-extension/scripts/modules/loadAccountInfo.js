@@ -35,8 +35,6 @@ const loadAccountInfo = async (account) => {
         const resp = await fetch(apiURL);
         const respJSON = await resp.json();
  
-        console.log(respJSON);
-
         if (respJSON && (respJSON.display_name || respJSON.username)){
           results = {
             account,
