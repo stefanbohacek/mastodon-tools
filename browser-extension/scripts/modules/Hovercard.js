@@ -63,12 +63,19 @@ class Hovercard {
     
                     labelsHTML += '</span>';
                 }
+
+                let profileImageHTML = '';
+
+                if (results.avatar_static){
+                    profileImageHTML = `<img width="60" heigh="60" class="sbmt-profile-img" src="${results.avatar_static}" />`;              
+                }
+
     
                 card.innerHTML = `
                 <div class="sbmt-row">
                     <div class="sbmt-profile-img-wrapper sbmt-column">
                         <a href="/${results.account}" class="sbmt-profile-img-link">
-                            <img width="60" heigh="60" class="sbmt-profile-img" src="${results.avatar_static}" />
+                            ${profileImageHTML}
                         </a>
                     </div>
                     <div class="sbmt-account-details sbmt-column">
