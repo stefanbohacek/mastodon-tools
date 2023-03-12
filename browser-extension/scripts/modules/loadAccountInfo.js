@@ -4,6 +4,40 @@ const cookies = new Cookies();
 let savedAccounts = [];
 let isFetchingData = false;
 
+const getPlaceholderResults = (account) => {
+  let displayName, imgURL;
+  const profileData = document.querySelector(`a[href="/${account}"]`);
+
+  try{
+    displayName = profileData.querySelector('.display-name__html').textContent;
+    imgURL = document.querySelector(`img[alt="${account.substring(1)}"]`).getAttribute('src');
+  } catch (error){
+    try{
+      displayName = document.querySelector('.notification__display-name').textContent;
+      imgURL = document.querySelector(`.account__avatar img[alt="${account.substring(1)}"]`).getAttribute('src');
+      
+    } catch(error){
+      console.log('debug:getPlaceholderResults', error)
+    }
+    console.log('debug:getPlaceholderResults', error)
+  }
+
+  return {
+    account,
+    display_name: displayName || account,
+    username: account,
+    avatar_static: imgURL || '',
+    note: 'Unable to fetch data.',
+    // fields: respJSON.fields,
+    // followers_count: respJSON.followers_count,
+    // following_count: respJSON.following_count,
+    // header_static: respJSON.header_static,
+    // bot: respJSON.bot,
+    // locked: respJSON.locked,
+    url: ''
+  };  
+}
+
 try{
   savedAccounts = JSON.parse(window.atob(decodeURIComponent(escape(cookies.getCookie('sbmtSavedAccounts')))));
 } catch (err) {
@@ -62,6 +96,8 @@ const loadAccountInfo = async (account) => {
           }
   
           cookies.setCookie('sbmtSavedAccounts', window.btoa(window.unescape(encodeURIComponent(JSON.stringify(savedAccounts)))), 15);
+        } else {
+          results = getPlaceholderResults(account);
         }
   
         isFetchingData = false;
@@ -70,26 +106,10 @@ const loadAccountInfo = async (account) => {
         console.log('loadAccountInfo:error', error);
         isFetchingData = false;
         if (error != 'TypeError: Failed to fetch'){
-          loadAccountInfo(account);
+          console.log('debug:loadAccountInfo', error);
+          // loadAccountInfo(account);
         } else {
-          const profileData = document.querySelector(`a[href="/${account}"]`);
-          const displayName = profileData.querySelector('.display-name__html').textContent;
-          const imgURL = document.querySelector(`img[alt="${account.substring(1)}"]`).getAttribute('src');
-
-          results = {
-            account,
-            display_name: displayName,
-            username: account,
-            avatar_static: imgURL,
-            note: 'Unable to fetch data.',
-            // fields: respJSON.fields,
-            // followers_count: respJSON.followers_count,
-            // following_count: respJSON.following_count,
-            // header_static: respJSON.header_static,
-            // bot: respJSON.bot,
-            // locked: respJSON.locked,
-            url: ''
-          };
+          results = getPlaceholderResults(account);
         }
         return results;
       }
