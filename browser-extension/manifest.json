@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "A collection of useful tools for Mastodon.",
     "homepage_url": "https://stefanbohacek.com/project/mastodon-tools-browser-extension/",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "minimum_chrome_version": "74",
-    "applications": {
+    "browser_specific_settings": {
         "gecko": {
             "id": "stefan@stefanbohacek.com",
             "strict_min_version": "67.0"
@@ -22,11 +22,11 @@
     },  
     "permissions": [
         "storage",
-        "tabs",
-        "<all_urls>"
+        "tabs"
     ],
+    "host_permissions": ["*://*/*"],    
     "options_page": "options.html",
-    "browser_action": {
+    "action": {
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },
@@ -40,12 +40,22 @@
         ]        
     }],
     "web_accessible_resources": [
-        "scripts/main.js",
-        "scripts/modules/Hovercard.js",
-        "scripts/modules/addLiveEventListeners.js",
-        "scripts/modules/cookies.js",
-        "scripts/modules/loadAccountInfo.js",
-        "scripts/modules/ready.js",
-        "scripts/modules/waitForElement.js"
-    ]    
+        {
+            "resources": [
+                "scripts/main.js",
+                "scripts/modules/Hovercard.js",
+                "scripts/modules/addLiveEventListeners.js",
+                "scripts/modules/cookies.js",
+                "scripts/modules/familiarFollowers.js",
+                "scripts/modules/loadAccountInfo.js",
+                "scripts/modules/options.js",
+                "scripts/modules/ready.js",
+                "scripts/modules/waitForElement.js"                
+            ],
+            "matches": [ "<all_urls>" ]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "connect-src * data: blob: filesystem:; script-src 'self';"
+    } 
 }

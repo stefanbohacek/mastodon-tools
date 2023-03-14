@@ -1,31 +1,19 @@
-const saveOptions = () => {
-  let mastodonInstances = document.getElementById('mastodon-instances').value;
-  let showHovercards = document.getElementById('show-hovercards').checked;
+import {saveOptions, loadOptions} from './modules/options.js';
 
-  chrome.storage.sync.set({
-    mastodonInstances,
-    showHovercards
-  }, function() {
-    let status = document.getElementById('status');
-    status.textContent = 'Options saved.';
-    setTimeout(function() {
-      status.textContent = '';
-    }, 1000);
-  });
+const restoreOptions = async () => {
+  const options = await loadOptions();
+  
+  if (options.mastodonInstances){
+    document.getElementById('mastodon-instances').value = options.mastodonInstances;
+  }
+  if (options.showHovercards){
+    document.getElementById('show-hovercards').checked = true;
+  }
 }
 
-const restoreOptions = () => {
-  chrome.storage.sync.get({
-    mastodonInstances: 'mastodon.social\nbotsin.space',
-    showHovercards: false
-  }, function(items) {
-    if (items.mastodonInstances){
-      document.getElementById('mastodon-instances').value = items.mastodonInstances;
-    }
-    if (items.showHovercards){
-      document.getElementById('show-hovercards').checked = true;
-    }
-  });
-}
 document.addEventListener('DOMContentLoaded', restoreOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
+document.getElementById('save').addEventListener('click', () => {
+  let mastodonInstances = document.getElementById('mastodon-instances').value.trim();
+  let showHovercards = document.getElementById('show-hovercards').checked;
+  saveOptions({mastodonInstances, showHovercards});
+});

@@ -1,3 +1,5 @@
+import {saveOptions, loadOptions} from './modules/options.js';
+
 let currentURL;
 
 const ready = (fn) => {
@@ -70,7 +72,7 @@ const addLiveEventListeners = (selector, event, handler) => {
 }
 
 ready(() => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
     const activeTab = tabs[0];
     currentURL = activeTab.url;
 
@@ -85,22 +87,20 @@ ready(() => {
         window.open(chrome.runtime.getURL('options.html'));
       }
     });
-  
-    chrome.storage.sync.get({
-      mastodonInstances: 'mastodon.social'
-    }, (items)  => {
-      if (items.mastodonInstances){
-        let instanceListHTML = '';      
-        items.mastodonInstances.split('\n').forEach((instance) => {
-          instanceListHTML += `
-          <li class="pb-1">
-            <a href="#" class="switch-instance-btn w-100 text-left" data-instance=${instance}>${instance}</a>
-          </li>    
-          `;
-        });
-        const mastodonInstances = document.getElementById('mastodon-instances');
-        mastodonInstances.innerHTML = instanceListHTML;
-      }
-    }); 
+
+    const options = await loadOptions();
+
+    if (options.mastodonInstances){
+      let instanceListHTML = '';      
+      options.mastodonInstances.split('\n').forEach((instance) => {
+        instanceListHTML += `
+        <li class="pb-1">
+          <a href="#" class="switch-instance-btn w-100 text-left" data-instance=${instance}>${instance}</a>
+        </li>    
+        `;
+      });
+      const mastodonInstances = document.getElementById('mastodon-instances');
+      mastodonInstances.innerHTML = instanceListHTML;
+    }
   });
 });
