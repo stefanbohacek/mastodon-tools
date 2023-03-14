@@ -8,7 +8,7 @@
     "browser_specific_settings": {
         "gecko": {
             "id": "stefan@stefanbohacek.com",
-            "strict_min_version": "67.0"
+            "strict_min_version": "101"
         }
     },
     "icons": {
