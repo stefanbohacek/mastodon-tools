@@ -4,7 +4,7 @@
     "description": "A collection of useful tools for Mastodon.",
     "homepage_url": "https://stefanbohacek.com/project/mastodon-tools-browser-extension/",
     "manifest_version": 3,
-    "minimum_chrome_version": "74",
+    "minimum_chrome_version": "88",
     "browser_specific_settings": {
         "gecko": {
             "id": "stefan@stefanbohacek.com",
