@@ -1,11 +1,14 @@
-# Mastodon Tools (Beta)
+# Mastodon Tools
 
-This is an early version of my Mastodon Tools browser extension, available for testing on Firefox and Chrome.
+**[Add to Firefox](https://addons.mozilla.org/en-US/firefox/addon/stefan-s-mastodon-tools/) | Chrome version coming soon**
 
-Here's how you can install an extension in development mode:
+
+You can also install the developemnt version of this extension:
 
 - [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing)
 - [Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked)
+
+Feel free to [open a new issue](https://github.com/stefanbohacek/mastodon-tools/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) to report a bug or request a feature, or [reach out privately](https://stefanbohacek.com/contact/).
 
 ## Features
 
