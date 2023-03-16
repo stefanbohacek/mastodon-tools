@@ -54,8 +54,5 @@
             ],
             "matches": [ "<all_urls>" ]
         }
-    ],
-    "content_security_policy": {
-        "extension_pages": "connect-src * data: blob: filesystem:; script-src 'self';"
-    } 
+    ]
 }
