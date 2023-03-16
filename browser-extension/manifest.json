@@ -45,6 +45,7 @@
                 "scripts/main.js",
                 "scripts/modules/Hovercard.js",
                 "scripts/modules/addLiveEventListeners.js",
+                "scripts/modules/checkToken.js",
                 "scripts/modules/cookies.js",
                 "scripts/modules/familiarFollowers.js",
                 "scripts/modules/loadAccountInfo.js",
