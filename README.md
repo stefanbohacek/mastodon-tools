@@ -1,9 +1,9 @@
 # Mastodon Tools
 
-**[Add to Firefox](https://addons.mozilla.org/en-US/firefox/addon/stefan-s-mastodon-tools/) | Chrome version coming soon**
+**[Add to Firefox](https://addons.mozilla.org/en-US/firefox/addon/stefan-s-mastodon-tools/) | [Add to Chrome](https://chrome.google.com/webstore/detail/stefans-mastodon-tools/ngcnchkkkmneongkenppjocbfcoalfjn)**
 
 
-You can also install the developemnt version of this extension:
+You can also install the development version of this extension:
 
 - [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension#installing)
 - [Chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked)
@@ -42,9 +42,11 @@ Note that this feature is under active development and you will need to enable i
 
 ## Known issues
 
+See also [open issues in this repo](https://github.com/stefanbohacek/mastodon-tools/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
+
 ### Profile hovercards
 
-- Hovercards doen't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
+- Hovercards don't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
 - Hovercards don't work for accounts on some non-Mastodon servers.
 - Hovercards for accounts mentioned in profile bio are not positioned correctly.
 
