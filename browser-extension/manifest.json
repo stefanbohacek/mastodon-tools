@@ -1,6 +1,6 @@
 {
     "name": "Stefan's Mastodon Tools",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A collection of useful tools for Mastodon.",
     "homepage_url": "https://stefanbohacek.com/project/mastodon-tools-browser-extension/",
     "manifest_version": 3,

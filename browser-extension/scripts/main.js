@@ -18,7 +18,7 @@ ready(async () => {
   // }
 
   if (options.showHovercards){
-    addLiveEventListeners(".mention", "mouseenter", hovercard.addHovercard);
+    addLiveEventListeners(".u-url.mention", "mouseenter", hovercard.addHovercard);
     addLiveEventListeners(".account__display-name", "mouseenter", hovercard.addHovercard);
     addLiveEventListeners(".detailed-status__display-name", "mouseenter", hovercard.addHovercard);
     addLiveEventListeners(".notification__display-name", "mouseenter", hovercard.addHovercard);
