@@ -1,3 +1,8 @@
+.sbmt-hovercard{
+    display: none;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+}
+
 .sbmt-hovercard.sbmt-account-info{
     color: #606984 !important;
     /* font-size: 1rem !important; */
@@ -17,9 +22,10 @@
     color: #606984 !important;
 }
 
-.sbmt-hovercard{
-    display: none;
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+.sbmt-hovercard .smbt-follower-status{
+    color: #fff !important;
+    font-size: 0.8rem;
+    padding: 4px;
 }
 
 .xmention *{

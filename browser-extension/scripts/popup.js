@@ -87,6 +87,22 @@ ready(() => {
         window.open(chrome.runtime.getURL('options.html'));
       }
     });
+  
+    document.getElementById('auth').addEventListener('click', ()  => {
+      let domain = (new URL(currentURL));
+      domain = domain.hostname;
+      window.open(`https://auth.stefanbohacek.dev/?method=mastodon&instance=${domain}&scope=read:accounts+read:follows`);
+    });
+
+    document.getElementById('auth-help').addEventListener('click', ()  => {
+      alert(`
+By signing in with your account you will get access to additional features, including:
+
+- show follower status in hovercards
+
+To manage which apps have access to your account, please visit Preferences > Account > Authorized apps on your Mastodon instance.
+      `);
+    });
 
     const options = await loadOptions();
 

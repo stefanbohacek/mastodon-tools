@@ -1,12 +1,16 @@
 import loadAccountInfo from './loadAccountInfo.js';
-
 class Hovercard {
+    constructor(options) {
+        this.options = options;
+        this.addHovercard = this.addHovercard.bind(this);
+    }
+    
     removeHovercards(target){
         [...document.getElementsByClassName('sbmt-account-info')].forEach(el => {
             el.parentNode.removeChild(el);
         });
     }
-    
+
     addHovercard(target){
         if (target.classList.contains('sbmt-has-card')){ return };
         // target.classList.add('sbmt-pe-none');
@@ -23,7 +27,6 @@ class Hovercard {
         }
 
         loadAccountInfo(account).then(results => {
-
             if (results && (results.display_name || results.username)){
                 const card = document.createElement('div');
                 card.classList.add('sbmt-card', 'sbmt-hovercard', 'sbmt-account-info');
@@ -42,27 +45,45 @@ class Hovercard {
            
                 const followersHTML = Number.isInteger(results.followers_count) ? `<span class="sbmt-followers-following">${results.following_count.toLocaleString()} following | ${results.followers_count.toLocaleString()} followers<span>` : '';
     
-                let labelsHTML = '';
-    
-                if (results.roles || results.bot || results.locked){
-                    labelsHTML = '<span class="sbmt-account-labels">';
-                    
-                    if (results.roles){
-                        if (results.roles.includes('owner')){
-                            labelsHTML += '<span title="Instance owner">👑</span>';
-                        }
+                let labelsHTML = '<span class="sbmt-account-labels">';
+                let isFollower = false, isFollowing = false;
+
+                if (this.options){
+                    if (this.options.followers && this.options.followers.map(account => `@${account.acc}`).includes(results.account)){
+                        isFollower = true;
                     }
                     
-                    if (results.bot){
-                        labelsHTML += '<span title="Automated account">🤖</span>';
+                    if (this.options.followedAccounts && this.options.followedAccounts.map(account => `@${account.acc}`).includes(results.account)){
+                        isFollowing = true;
                     }
-    
-                    if (results.locked){
-                        labelsHTML += '<span title="Locked account">🔒</span>';
-                    }
-    
-                    labelsHTML += '</span>';
                 }
+
+                if (isFollower && isFollowing){
+                    labelsHTML += '<span class="smbt-follower-status">mutual follow</span>';
+                } else {
+                    if (isFollower){
+                        labelsHTML += '<span class="smbt-follower-status">follows you</span>';
+                    }
+                    if (isFollowing){
+                        labelsHTML += `<span class="smbt-follower-status">you're following</span>`;
+                    }
+                }
+             
+                if (results.roles){
+                    if (results.roles.includes('owner')){
+                        labelsHTML += '<span title="Instance owner">👑</span>';
+                    }
+                }
+                
+                if (results.bot){
+                    labelsHTML += '<span title="Automated account">🤖</span>';
+                }
+
+                if (results.locked){
+                    labelsHTML += '<span title="Locked account">🔒</span>';
+                }
+
+                labelsHTML += '</span>';
 
                 let profileImageHTML = '';
 
@@ -93,12 +114,8 @@ class Hovercard {
                 // target.prepend(card);  
                 target.insertAdjacentHTML('afterend', card.outerHTML); 
             }
-
-    
         });
-      
     }
-
 };
 
 export default Hovercard;

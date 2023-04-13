@@ -1,20 +1,49 @@
 import ready from './modules/ready.js';
 import addLiveEventListeners from './modules/addLiveEventListeners.js';
 import checkToken from './modules/checkToken.js';
+import checkUserID from './modules/checkUserID.js';
 import {loadOptions} from './modules/options.js';
 import Hovercard from './modules/Hovercard.js';
+import getFollowedAccounts from './modules/getFollowedAccounts.js';
+import getFollowers from './modules/getFollowers.js';
 // import familiarFollowers from './modules/familiarFollowers.js';
-
-const hovercard = new Hovercard();
 
 ready(async () => {
   checkToken();
-  const options = await loadOptions();
 
-  // if (options.authToken){
-  //   familiarFollowers(options.authToken).then(() => {
-  //     console.log('done');
-  //   });
+  const instance = window.location.host;
+  const options = await loadOptions();
+  // console.log(options);
+
+  let hovercard;
+
+  if (options.accounts[instance]){
+    const followedAccounts = await getFollowedAccounts(options.accounts[instance], options.token);
+    const followers = await getFollowers(options.accounts[instance], options.token);
+    // console.log({followedAccounts});
+    // console.log({followers});
+    hovercard = new Hovercard({
+      followers,
+      followedAccounts
+    });
+  } else {
+    hovercard = new Hovercard()
+  }  
+
+
+  if (options.tokens){
+    checkUserID(instance, options);
+
+    // familiarFollowers(options.tokens[currentInstance]).then(() => {
+    //   console.log('done');
+    // });
+  }
+
+  // if (options.accounts[instance]){
+  //   const followedAccounts = await getFollowedAccounts(options.accounts[instance], options.token);
+  //   const followers = await getFollowers(options.accounts[instance], options.token);
+  //   // console.log({followedAccounts});
+  //   // console.log({followers});
   // }
 
   if (options.showHovercards){

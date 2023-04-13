@@ -10,9 +10,10 @@ const checkToken = async () => {
   if (instance && method && code){
     const token = document.documentElement.innerText;
     if (token){
-      saveOptions({
-        authToken: token
-      });
+      let tokens = {};
+      tokens[instance] = token;
+      console.log({tokens})
+      saveOptions({tokens});
     }
     window.location.replace(`https://${instance}`);
   }
