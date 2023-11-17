@@ -17,9 +17,9 @@ const getPlaceholderResults = (account) => {
       imgURL = document.querySelector(`.account__avatar img[alt="${account.substring(1)}"]`).getAttribute('src');
       
     } catch(error){
-      console.log('debug:getPlaceholderResults', error)
+      // console.log('debug:getPlaceholderResults', error)
     }
-    console.log('debug:getPlaceholderResults', error)
+    // console.log('debug:getPlaceholderResults', error)
   }
 
   return {
@@ -41,7 +41,7 @@ const getPlaceholderResults = (account) => {
 try{
   savedAccounts = JSON.parse(window.atob(decodeURIComponent(escape(cookies.getCookie('sbmtSavedAccounts')))));
 } catch (err) {
-  console.log('savedAccounts:error', err, cookies.getCookie('sbmtSavedAccounts'));
+  // console.log('savedAccounts:error', err, cookies.getCookie('sbmtSavedAccounts'));
 }
 
 // console.log('savedAccounts', savedAccounts);
@@ -103,10 +103,10 @@ const loadAccountInfo = async (account) => {
         isFetchingData = false;
         return results;
       } catch (error) {
-        console.log('loadAccountInfo:error', error);
+        // console.log('loadAccountInfo:error', error);
         isFetchingData = false;
         if (error != 'TypeError: Failed to fetch'){
-          console.log('debug:loadAccountInfo', error);
+          // console.log('debug:loadAccountInfo', error);
           // loadAccountInfo(account);
         } else {
           results = getPlaceholderResults(account);
