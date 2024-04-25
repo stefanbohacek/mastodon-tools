@@ -83,7 +83,8 @@ ready(async () => {
   }
 
   let atSigns = document.URL.match(/@/g);
-  if (atSigns && atSigns.length === 2){
+
+  if (options.getStatusContext && atSigns && atSigns.length === 2){
     const url = new URL(document.URL);
     const domain = url.hostname;
     const postId = url.pathname.split("/")[2];

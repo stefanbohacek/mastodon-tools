@@ -15,5 +15,6 @@ document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', () => {
   let mastodonInstances = document.getElementById('mastodon-instances').value.trim();
   let showHovercards = document.getElementById('show-hovercards').checked;
-  saveOptions({mastodonInstances, showHovercards});
+  let getStatusContext = document.getElementById('get-status-context').checked;
+  saveOptions({mastodonInstances, showHovercards, getStatusContext});
 });
