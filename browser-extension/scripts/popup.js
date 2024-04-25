@@ -61,7 +61,7 @@ const switchInstance = async (currentTarget) => {
       chrome.scripting.executeScript(
         {
           target: { tabId: tabs[0].id },
-          function: () => {
+          func: () => {
             return document.querySelector("[rel='canonical']").href;
           },
         },
