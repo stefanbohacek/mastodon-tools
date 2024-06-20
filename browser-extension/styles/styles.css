@@ -6,6 +6,10 @@
   white-space: normal !important;
 }
 
+.status-card__title{
+  white-space: normal !important;
+}
+
 .sbmt-hovercard {
   display: none;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
