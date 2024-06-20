@@ -1,54 +1,62 @@
-.sbmt-hovercard{
-    display: none;
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+.status-card__image:has(.fa) {
+  display: none !important;
 }
 
-.sbmt-hovercard.sbmt-account-info{
-    color: #606984 !important;
-    /* font-size: 1rem !important; */
-    font-size: 15px !important;
-    min-width: 360px;
-    max-width: 420px;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    z-index: 999999;
+.status-card__description {
+  white-space: normal !important;
 }
 
-.sbmt-hovercard.sbmt-account-info a{
-    color: #606984 !important;
+.sbmt-hovercard {
+  display: none;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
 }
 
-.sbmt-hovercard .smbt-follower-status{
-    color: #fff !important;
-    font-size: 0.8rem;
-    padding: 4px;
+.sbmt-hovercard.sbmt-account-info {
+  color: #606984 !important;
+  /* font-size: 1rem !important; */
+  font-size: 15px !important;
+  min-width: 360px;
+  max-width: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 999999;
 }
 
-.xmention *{
-    display: inline;
+.sbmt-hovercard.sbmt-account-info a {
+  color: #606984 !important;
+}
+
+.sbmt-hovercard .smbt-follower-status {
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding: 4px;
+}
+
+.xmention * {
+  display: inline;
 }
 
 .mention:hover .sbmt-hovercard.sbmt-account-info p,
-.sbmt-hovercard.sbmt-account-info p{
-    text-decoration: none;
+.sbmt-hovercard.sbmt-account-info p {
+  text-decoration: none;
 }
 
-.status__content.status__content--with-action{
-    /* overflow: visible !important; */
+.status__content.status__content--with-action {
+  /* overflow: visible !important; */
 }
 
-.status__content{
-    /* overflow: visible !important; */
+.status__content {
+  /* overflow: visible !important; */
 }
 
 .detailed-status__display-name,
-.detailed-status{
-    position: relative;
-    overflow: visible !important;
+.detailed-status {
+  position: relative;
+  overflow: visible !important;
 }
 
 .sbmt-hovercard:hover,
@@ -56,87 +64,87 @@
 .account__display-name:hover + .sbmt-hovercard,
 .detailed-status__display-name:hover + .sbmt-hovercard,
 .notification__display-name:hover + .sbmt-hovercard,
-.status__display-name:hover + .sbmt-hovercard{
-    display: flex;
+.status__display-name:hover + .sbmt-hovercard {
+  display: flex;
 }
 
-.sbmt-profile-img-wrapper{
-    padding: 8px 0 8px 8px;
+.sbmt-profile-img-wrapper {
+  padding: 8px 0 8px 8px;
 }
 
-.sbmt-profile-img{
-    width: 60px;
-    height: 60px;
-    display: block;
-    border-radius: 50%;
-    background-color: #282c37;
+.sbmt-profile-img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+  background-color: #282c37;
 }
 
-.sbmt-profile-img-link{
-    display: flex;
+.sbmt-profile-img-link {
+  display: flex;
 }
 
-.sbmt-profile-img-link:hover{
-    text-decoration: none !important;
+.sbmt-profile-img-link:hover {
+  text-decoration: none !important;
 }
 
-.sbmt-account-details{
-    flex: 5 !important;
-    padding: 8px 8px 8px 4px;
-    line-height: 1.4;
+.sbmt-account-details {
+  flex: 5 !important;
+  padding: 8px 8px 8px 4px;
+  line-height: 1.4;
 }
 
-.sbmt-account-name{
-    font-weight: bold;
+.sbmt-account-name {
+  font-weight: bold;
 }
 
-.sbmt-account-name-link{
-    display: flex;
+.sbmt-account-name-link {
+  display: flex;
 }
 
-.sbmt-account-username{
-    font-size: 0.9rem;
+.sbmt-account-username {
+  font-size: 0.9rem;
 }
 
-.sbmt-account-note{
-    margin-top: 4px;
-    font-weight: normal;
-    line-height: 1.3;
+.sbmt-account-note {
+  margin-top: 4px;
+  font-weight: normal;
+  line-height: 1.3;
 }
 
-.sbmt-account-note p *{
-    display: inline !important;
+.sbmt-account-note p * {
+  display: inline !important;
 }
 
-.sbmt-row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+.sbmt-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.sbmt-column{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
+.sbmt-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
 
-.sbmt-followers-following{
-    margin-top: 4px;
-    font-size: 0.8rem;
+.sbmt-followers-following {
+  margin-top: 4px;
+  font-size: 0.8rem;
 }
 
-.sbmt-account-labels{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 2px;
-    background: silver;
-    border-radius: 20px;
-    margin: 2px;    
+.sbmt-account-labels {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  background: silver;
+  border-radius: 20px;
+  margin: 2px;
 }
 
-.sbmt-pe-none{
-    pointer-events: none;
+.sbmt-pe-none {
+  pointer-events: none;
 }
