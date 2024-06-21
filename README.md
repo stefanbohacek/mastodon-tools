@@ -26,7 +26,7 @@ Each instance domain (omit the http or https protocol) goes on a separate line.
 
 ### Expanded quote post previews
 
-Quoted posts will now show the full text!
+Quoted posts will now show the full text! (Shout out to [@mansr](https://society.oftrolls.com/@mansr) for [discovering how to do this](https://society.oftrolls.com/@mansr/112643547467281611)!)
 
 ![A side-by-side comparison of a quoted Mastodon post. On the left, the text is cut off. On the right, it is fully visible.](browser-extension/assets/expanded-quote-posts.png)
 
