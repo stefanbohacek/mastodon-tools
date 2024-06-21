@@ -1,6 +1,6 @@
-/* .status-card__image:has(.fa) {
+.status-card__image:has(.fa-file-text) {
   display: none !important;
-} */
+}
 
 .status-card__description {
   white-space: normal !important;
