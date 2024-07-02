@@ -43,22 +43,6 @@ ready(async () => {
   const options = await loadOptions();
   // console.log(options);
 
-  let hovercard;
-
-  if (options.accounts[instance]){
-    const followedAccounts = await getFollowedAccounts(options.accounts[instance], options.token);
-    const followers = await getFollowers(options.accounts[instance], options.token);
-    // console.log({followedAccounts});
-    // console.log({followers});
-    hovercard = new Hovercard({
-      followers,
-      followedAccounts
-    });
-  } else {
-    hovercard = new Hovercard()
-  }  
-
-
   if (options.tokens){
     checkUserID(instance, options);
 
@@ -75,6 +59,21 @@ ready(async () => {
   // }
 
   if (options.showHovercards){
+    let hovercard;
+
+    if (options.accounts[instance]){
+      const followedAccounts = await getFollowedAccounts(options.accounts[instance], options.token);
+      const followers = await getFollowers(options.accounts[instance], options.token);
+      // console.log({followedAccounts});
+      // console.log({followers});
+      hovercard = new Hovercard({
+        followers,
+        followedAccounts
+      });
+    } else {
+      hovercard = new Hovercard()
+    }  
+  
     addLiveEventListeners(".u-url.mention", "mouseenter", hovercard.addHovercard);
     addLiveEventListeners(".account__display-name", "mouseenter", hovercard.addHovercard);
     addLiveEventListeners(".detailed-status__display-name", "mouseenter", hovercard.addHovercard);
