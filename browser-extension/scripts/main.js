@@ -26,7 +26,7 @@ const fetchStatus = async (instance, url) => {
 const getStatusContext = async (url) => {
   let results = [];
   try {
-    const resp = await fetch(`https://fediverse-info.stefanbohacek.dev/post-context?url=${url}`);
+    const resp = await fetch(`https://fediverse-info.stefanbohacek.com/post-context?url=${url}`);
     const respJSON = await resp.json();
     results = respJSON;
     return results;

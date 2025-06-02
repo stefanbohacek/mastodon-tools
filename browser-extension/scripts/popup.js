@@ -30,23 +30,6 @@ const handleLinks = () => {
   }
 };
 
-const addFediverseExplorerLink = async (currentURL) => {
-  const tagBrowserLink = document.getElementById("tag-browser-link");
-  let tag = currentURL.split("/tags/");
-
-  if (tag && tag.length > 1) {
-    tag = tag[1].toLowerCase();
-
-    const a = document.createElement("a");
-    const link = document.createTextNode(`Explore the #${tag} tag`);
-    a.classList.add("fw-bold");
-    a.appendChild(link);
-    a.href = `https://fediverse-explorer.stefanbohacek.dev/?tag=${tag}`;
-    tagBrowserLink.appendChild(a);
-    tagBrowserLink.classList.remove("d-none");
-  }
-};
-
 const switchInstance = async (currentTarget) => {
   const instance = currentTarget.dataset.instance;
   let domain = new URL(currentURL);
@@ -104,7 +87,6 @@ ready(() => {
     const activeTab = tabs[0];
     currentURL = activeTab.url;
 
-    addFediverseExplorerLink(currentURL);
     addLiveEventListeners(".switch-instance-btn", "click", switchInstance);
     handleLinks();
 
@@ -120,7 +102,7 @@ ready(() => {
       let domain = new URL(currentURL);
       domain = domain.hostname;
       window.open(
-        `https://auth.stefanbohacek.dev/?method=mastodon&instance=${domain}&scope=read:accounts+read:follows&app=mastodon-browser-tools`
+        `https://auth.stefanbohacek.com/?method=mastodon&instance=${domain}&scope=read:accounts+read:follows&app=mastodon-browser-tools`
       );
     });
 

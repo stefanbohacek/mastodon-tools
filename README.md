@@ -30,12 +30,6 @@ Quoted posts will now show the full text! (Shout out to [@mansr](https://society
 
 ![A side-by-side comparison of a quoted Mastodon post. On the left, the text is cut off. On the right, it is fully visible.](browser-extension/assets/expanded-quote-posts.png)
 
-### Tag browser
-
-When viewing a tag page on Mastodon, a link will be added to the plugin pop-up window that lets you browse the current tag across a larger portion of the fediverse using the [Fediverse Explorer](https://fediverse-explorer.stefanbohacek.dev/), another tool I've developed.
-
-![Screenshot of the settings page with a text field for adding your Mastodon instances.](browser-extension/assets/tag-browser.png)
-
 ## Experimental features
 
 ### Profile hovercards
