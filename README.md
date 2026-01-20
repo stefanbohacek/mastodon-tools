@@ -12,44 +12,16 @@ Feel free to [open a new issue](https://github.com/stefanbohacek/mastodon-tools/
 
 ## Features
 
-### Mastodon instance switcher
+### Mastodon server switcher
 
-Clicking the extension icon lets you open a currently viewed post on another instance. On the extension settings you can specify one or more instances you use and want to switch between.
+Clicking the extension icon lets you open a currently viewed post on another server. On the extension settings you can specify one or more servers you use and want to switch between.
 
-![Screenshot of the main menu with a list of Mastodon instances allowing you to switch between them.](browser-extension/assets/screenshot-popup.png)
+![Screenshot of the main menu with a list of Mastodon servers allowing you to switch between them.](browser-extension/assets/screenshot-popup.png)
 
+Each server domain (omit the http or https protocol) goes on a separate line.
 
-Each instance domain (omit the http or https protocol) goes on a separate line.
-
-![Screenshot of the settings page with a text field for adding your Mastodon instances.](browser-extension/assets/screenshot-settings.png)
-
-
-### Expanded quote post previews
-
-Quoted posts will now show the full text! (Shout out to [@mansr](https://society.oftrolls.com/@mansr) for [discovering how to do this](https://society.oftrolls.com/@mansr/112643547467281611)!)
-
-![A side-by-side comparison of a quoted Mastodon post. On the left, the text is cut off. On the right, it is fully visible.](browser-extension/assets/expanded-quote-posts.png)
-
-## Experimental features
-
-### Profile hovercards
-
-This feature is on [Mastodon's roadmap](https://joinmastodon.org/roadmap), under "Exploring" as "On-hover information cards for users", but you don't have to wait!
-
-![A screenshot of two posts with the hovercard visible as an overlay.](browser-extension/assets/hovercard.png)
-
-Note that this feature is under active development and you will need to enable it in the settings. It is currently only available in Chrome.
+![Screenshot of the settings page with a text field for adding your Mastodon servers.](browser-extension/assets/screenshot-settings.png)
 
 ## Known issues
 
 See also [open issues in this repo](https://github.com/stefanbohacek/mastodon-tools/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
-
-### Profile hovercards
-
-- Hovercards don't work for accounts with handles `account@example.com` if Mastodon itself is running at `subdomain.example.com`.
-- Hovercards don't work for accounts on some non-Mastodon servers.
-- Hovercards for accounts mentioned in profile bio are not positioned correctly.
-
-## TODO
-
-- ~~When data is not available, show profile picture from the post and a note explaining the lack of data.~~

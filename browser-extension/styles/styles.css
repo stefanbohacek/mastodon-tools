@@ -2,60 +2,8 @@
   display: none !important;
 }
 
-.sbmt-hovercard {
-  display: none;
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
-}
-
-.sbmt-hovercard.sbmt-account-info {
-  color: #606984 !important;
-  /* font-size: 1rem !important; */
-  font-size: 15px !important;
-  min-width: 360px;
-  max-width: 420px;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  z-index: 999999;
-}
-
-.sbmt-hovercard.sbmt-account-info a {
-  color: #606984 !important;
-}
-
-.sbmt-hovercard .smbt-follower-status {
-  color: #fff !important;
-  font-size: 0.8rem;
-  padding: 4px;
-}
-
 .xmention * {
   display: inline;
-}
-
-.mention:hover .sbmt-hovercard.sbmt-account-info p,
-.sbmt-hovercard.sbmt-account-info p {
-  text-decoration: none;
-}
-
-.status__content.status__content--with-action {
-  /* overflow: visible !important; */
-}
-
-.status__content {
-  /* overflow: visible !important; */
-}
-
-.sbmt-hovercard:hover,
-.mention:hover + .sbmt-hovercard,
-.account__display-name:hover + .sbmt-hovercard,
-.detailed-status__display-name:hover + .sbmt-hovercard,
-.notification__display-name:hover + .sbmt-hovercard,
-.status__display-name:hover + .sbmt-hovercard {
-  display: flex;
 }
 
 .sbmt-profile-img-wrapper {
@@ -118,11 +66,6 @@
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-}
-
-.sbmt-followers-following {
-  margin-top: 4px;
-  font-size: 0.8rem;
 }
 
 .sbmt-account-labels {

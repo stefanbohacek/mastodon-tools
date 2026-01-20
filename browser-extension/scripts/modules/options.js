@@ -1,7 +1,6 @@
 const loadOptions = async () => {
   const options = await chrome.storage.sync.get({
     mastodonInstances: 'mastodon.social\nbotsin.space',
-    showHovercards: false,
     getStatusContext: false,
     accounts: {},
     tokens: {},
