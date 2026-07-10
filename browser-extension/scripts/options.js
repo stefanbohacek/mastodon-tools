@@ -11,6 +11,5 @@ const restoreOptions = async () => {
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', () => {
   let mastodonInstances = document.getElementById('mastodon-instances').value.trim();
-  let getStatusContext = document.getElementById('get-status-context').checked;
-  saveOptions({mastodonInstances, getStatusContext});
+  saveOptions({mastodonInstances});
 });
